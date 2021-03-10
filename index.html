@@ -2,8 +2,22 @@
 <html>
 <head>
 <script>
+// this is javascript:
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
+  
+  const kysimus = "tsau, mis su nimi on?"
+  let vastus = prompt(kysimus)
+  
+  let boolean = true
+  if(boolean || true) {
+    alert("hei hoo!!!!!!!! Tsauuuuuu!!!!! Jeeeeeeeeee")
+  } else {
+    alert("ou, mulle see naljategemine eriti ei meeldi, proovib uuesti")
+    vastus = prompt("mis su nimi ikkagi onn? jobu")
+  }
+
+  alert("vastus oli: " + vastus)
 });
 </script>
 <title>
@@ -11,5 +25,9 @@ window.addEventListener('load', (event) => {
 </head>
 <body>
 okidokipokoloki
+<h1 id=pealkiri>pealkiri</h1>
+<ol>
+  <li>esimene liige</li>
+</ol>
 </body>
 </html>
