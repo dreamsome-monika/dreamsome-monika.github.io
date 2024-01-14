@@ -4,6 +4,7 @@ const quizData = [
       options: ['Paris', 'London', 'Berlin', 'Madrid'],
       answer: 'Paris',
     },
+    
     {
       question: '2. What is the largest planet in our solar system?',
       options: ['Mars', 'Saturn', 'Jupiter', 'Neptune'],
