@@ -36,6 +36,10 @@ let incorrectAnswers = [];
 //kysimustiku kuvamine
 
 function displayQuestion() {
+
+
+
+
     const questionData = quizData[currentQuestion];
 
     const questionElement = document.getElementById('question');
@@ -105,22 +109,23 @@ function displayResult() {
     
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';
+    resultElement.style.display ='block'
 
-    resultElement.innerHTML = `Teie tulemus on ${score} , maksim ${quizData.length} küsimusest!`;
+    resultElement.innerHTML = `Teie tulemus on ${score} , kõikidest ${quizData.length} küsimustest!`;
 
     let incorrectAnswersHtml = '';
     for (let i = 0; i < incorrectAnswers.length; i++) {
         incorrectAnswersHtml += `
             <p>
-                <strong>Question:</strong> ${incorrectAnswers[i].question}<br>
-                <strong>Your Answer:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
-                <strong>Correct Answer:</strong> ${incorrectAnswers[i].correctAnswer}
+                <strong>Küsimus:</strong> ${incorrectAnswers[i].question}<br>
+                <strong>Teie vastus:</strong> ${incorrectAnswers[i].incorrectAnswer}<br>
+                <strong>Õige vastus:</strong> ${incorrectAnswers[i].correctAnswer}
             </p>
         `;
     }
 
     resultElement.innerHTML += `
-        <p>Incorrect Answers:</p>
+        <p>Valed vastused:</p>
         ${incorrectAnswersHtml}
     `;
 }

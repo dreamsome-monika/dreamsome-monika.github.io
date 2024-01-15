@@ -1,12 +1,68 @@
 body {
     background-image: url('/background_image.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     margin: 0;
     padding: 20px;
 }
 
+/* Päise tausta värv transparent */
+.header {
+    overflow: hidden;
+    background-color: #f1f1f100;
+    padding: 20px 10px;
+  }
+  
+  /* Päise lingid */
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  .header a:hover {
+    background-color: none;
+    
+
+  }
+  .header-right a:hover {
+    background-color: black;
+    color: white;
+    border-radius: 0%;
+
+}
+  /* logo stiil */
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+
+  }
+  
+  
+  /* lingid keskel */
+  .header-right {
+    float: left ;
+    position: relative;
+      left: 20%;
+  }
+  
+  /* responcive */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
 h1 {
     text-align: center;
 }
@@ -17,12 +73,37 @@ h1 {
 }
 
 #quiz-container {
-    background-color: #fff;
+    background-color: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    border-color: black;
+    border: solid;
 }
 
 button {
+    background-color: black;
+    color: white;
     margin-top: 10px;
+    padding: 10px;
+    border-radius: 0px;
+    border-color: black;
+    border: solid;
 }
+
+button:hover {
+    background-color: white;
+    color: black;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 0px;
+    border-color: black;
+    border: solid;
+}
+ #result {
+    background-color: white;
+    padding: 20px;
+    border-radius: 0px;
+    border-color: black;
+    border: solid;
+    display: none;
+ }
