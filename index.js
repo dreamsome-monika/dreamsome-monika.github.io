@@ -1,32 +1,26 @@
+
+//kysimused
 const quizData = [
     {
-      question: '1. What is the capital of France?',
-      options: ['Paris', 'London', 'Berlin', 'Madrid'],
-      answer: 'Paris',
+      question: '1. Mis on Eesti suurim rändrahn?',
+      options: ['Ehalkivi', 'Maarjakivi', 'Maakivi', 'Kajakivi'],
+      answer: 'Ehalkivi',
+    },
+
+    {
+      question: '2. Kus asub Eesti pikum rippsild?',
+      options: ['Kundas', 'Võrus', 'Tartus', 'Tallinnas'],
+      answer: 'Võrus',
+    },
+    {
+      question: '3. Nimetage Eesti pikum jõgi?',
+      options: ['Emajõgi', 'Pirita jõgi', 'Võhandu jõgi', 'Kasari jõgi'],
+      answer: 'Võhandu jõgi',
     },
     
-    {
-      question: '2. What is the largest planet in our solar system?',
-      options: ['Mars', 'Saturn', 'Jupiter', 'Neptune'],
-      answer: 'Jupiter',
-    },
-    {
-      question: '3. Which country won the FIFA World Cup in 2018?',
-      options: ['Brazil', 'Germany', 'France', 'Argentina'],
-      answer: 'France',
-    },
-    {
-      question: '4. Mis on jaanalind?',
-      options: ['koer', 'lindy', 'hobune', 'ahv'],
-      answer: 'lind',
-    },
-    {
-      question: '5. kes on lammas?',
-      options: ['loom', 'lind', 'ujuja', 'seen'],
-      answer: 'loom',
-    },
-    // Add more questions as needed
+
 ];
+//elemendid
 
 const quizContainer = document.getElementById('quiz-container');
 const submitButton = document.getElementById('submit');
@@ -38,6 +32,8 @@ const resultElement = document.getElementById('result')
 let currentQuestion = 0;
 let score = 0;
 let incorrectAnswers = [];
+
+//kysimustiku kuvamine
 
 function displayQuestion() {
     const questionData = quizData[currentQuestion];
@@ -76,6 +72,8 @@ function paneVale(currentQuestion, answer) {
     });
 }
 
+//vastuse kuvamine
+
 function checkAnswer(ev) {
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
 
@@ -88,7 +86,7 @@ function checkAnswer(ev) {
             feedbackElement.className = 'feedback correct';
             score++;
         } else {
-            feedbackElement.innerHTML = 'Vale! Õige vastus oli: ' + correctAnswer;
+            feedbackElement.innerHTML = 'Vale! Õige vastus on: ' + correctAnswer;
             feedbackElement.className = 'feedback incorrect';
             paneVale(currentQuestion, answer);
         }
@@ -96,17 +94,19 @@ function checkAnswer(ev) {
         nextButton.classList.remove('hide');
         submitButton.classList.add('hide');
     } else {
-        console.log(1)
+
         paneVale(currentQuestion, '');
     }
 }
 
+// tulemuste kuvamine
+
 function displayResult() {
-    console.log('displayResult', incorrectAnswers)
+    
     quizContainer.style.display = 'none';
     submitButton.style.display = 'none';
 
-    resultElement.innerHTML = `You scored ${score} out of ${quizData.length}!`;
+    resultElement.innerHTML = `Teie tulemus on ${score} , maksim ${quizData.length} küsimusest!`;
 
     let incorrectAnswersHtml = '';
     for (let i = 0; i < incorrectAnswers.length; i++) {
